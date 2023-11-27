@@ -1,0 +1,6 @@
+<h2>Hello {{ nameUser }}, you're a {{ ocuppation }}</h2>
+
+<p [contentEditable]="true"></p>
+<p [contentEditable]="false" (mouseenter)="onMouseEnter()"></p>
+
+<button (click)="emitToParent()">Message to parent</button>
