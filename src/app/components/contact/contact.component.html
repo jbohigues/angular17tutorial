@@ -1,0 +1,41 @@
+<section>
+  <h2>Contact Form</h2>
+  <form>
+    <label for="framework">
+      Favourite Framework
+      <input
+        id="framework"
+        type="text"
+        [(ngModel)]="favouriteFramework"
+        name="favouriteFramework"
+      />
+    </label>
+  </form>
+  {{ favouriteFramework }}
+</section>
+
+<section>
+  <h2>Reactive Form</h2>
+  <form [formGroup]="contactForm">
+    <label
+      >Name
+      <input type="text" formControlName="name" />
+    </label>
+    <label
+      >Email
+      <input type="email" formControlName="email" />
+    </label>
+    <button
+      type="submit"
+      (click)="submitForm()"
+      [disabled]="!contactForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+
+  ...
+  <h2>Contact Form</h2>
+  <p>Name: {{ contactForm.value.name }}</p>
+  <p>Email: {{ contactForm.value.email }}</p>
+</section>

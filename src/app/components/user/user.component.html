@@ -4,3 +4,10 @@
 <p [contentEditable]="false" (mouseenter)="onMouseEnter()"></p>
 
 <button (click)="emitToParent()">Message to parent</button>
+
+<h2>Operating Systems</h2>
+<ul>
+  @for (os of operatingSystems; track os.id) {
+  <li>{{ os.name | uppercase }}</li>
+  }
+</ul>
